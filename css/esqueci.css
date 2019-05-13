@@ -1,0 +1,26 @@
+.form-esqueci {
+    text-align: center;
+    position: relative;
+    top: 80px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.btn-esqueci {
+    align-self: center;
+    position: relative !important;
+    top: 66px !important;
+    border: 3px solid #C50000;
+    background-color: #c50000;
+    border-radius: 3px;
+    height: 35px;
+    width: 150px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+    outline: none;
+}

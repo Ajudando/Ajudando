@@ -1,0 +1,27 @@
+CREATE DATABASE ajudando; 
+
+USE ajudando;
+
+CREATE TABLE usuarios(
+	
+	id_usuario        INT                   NOT NULL  AUTO_INCREMENT,
+	
+	nome              VARCHAR (90)          NOT NULL,
+
+	senha			  VARCHAR (90)          NOT NULL,
+
+	nome_social       VARCHAR (90)          NOT NULL,
+
+	email             VARCHAR (120)         NOT NULL,
+
+	celular           CHAR    (11)          NOT NULL,
+    
+	confirmar_email   ENUM    ('Sim','Não') NOT NULL,
+        
+	confirmar_celular ENUM    ('Sim','Não') NOT NULL,
+	
+	titulacao         VARCHAR (20)          NOT NULL,
+
+	PRIMARY KEY (id_usuario)
+    
+) DEFAULT CHARSET = utf8;

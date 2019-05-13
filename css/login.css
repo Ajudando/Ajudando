@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    padding: 0; 
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.background {
+    background-image: url('../images/fundologin.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.6;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+}
+
+.form {
+    width: 500px;
+    min-height: 650px;
+    position: relative;
+    border: 4px solid #f1f1f1;
+    margin: 0px auto;
+    border-radius: 5px;
+    z-index: 1;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+}
+
+.ajudandotitle {
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top: 30px;
+}
+
+.logintitle {
+    position: absolute;
+    top: 110px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.credentials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    padding: 40px 40px 20px 40px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.inputlogin-password {
+    width: 87%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1.5px solid #555;
+    height: 25px;
+    transition: 0.5s;
+    outline: none;
+    background-color: white;
+    background-image: url(../images/passwordlogin.png);
+    background-position: 5px 7px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    background-size: 30px;
+}
+
+.inputlogin-user {
+    width: 87%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1.5px solid #555;
+    height: 25px;
+    transition: 0.5s;
+    outline: none;
+    background-color: white;
+    background-image: url(../images/userlogin.png);
+    background-position: 5px 7px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    background-size: 30px;
+}
+
+.inputlogin:focus {
+    border: 3px solid rgb(0, 0, 0);
+}
+
+.icon-user {
+    background-color: white;
+    background-image: url('../images/userlogin.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+.position-login {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.btn-login {
+    border: 3px solid #C50000;
+    background-color: #c50000;
+    border-radius: 3px;
+    height: 35px;
+    width: 90px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+    outline: none;
+}
+
+.display-or {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 30px;
+}
+
+.or {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.cadastrar {
+    display: flex;
+    position: relative;
+    top: 154px;
+    font-size: 18px;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.esqueci-senha {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 170px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nolink {
+    text-decoration: none;
+    color: black;
+}
+
+#my-signin2 {
+    position: absolute;
+    top: 26px;
+    right: 90px;
+}
+
+.fb-login-button {
+    position: absolute !important; 
+    top: 81px;
+    right: 86px;
+}
