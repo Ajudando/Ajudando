@@ -23,4 +23,5 @@
     position: relative;
     top: 20px;
     outline: none;
+	text-overflow: hidden;
 }
