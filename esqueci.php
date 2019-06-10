@@ -12,7 +12,7 @@
 
 <body>
     <div class="background">
-        <div class="form-cadastro">
+        <div class="form-esqueci">
             <img src="images/ajudandotitle.png" class="ajudandotitle-cadastro" />
             <h1 class="cadastrotitle">Recuperar Senha</h1>
             <form role="form" class="form-esqueci" method="post">
@@ -37,7 +37,9 @@
 
 		$verificador = $us->esqueci($usuario);
 		
-		echo "sua nova senha é: $verificador";
+		echo "<div class='modal-success-esqueci'>
+                <span>Sua nova senha é: $verificador</span>
+            </div>";
 	}
 
 

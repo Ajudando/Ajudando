@@ -60,44 +60,44 @@
                     </select>
                 </div>
                 <input type="submit" class="btn-cadastro" name="signup" value="Cadastrar">
-			</form>
+            </form>
         </div>
-	</div>
+    </div>
 
 </body>
 <?php
-	require_once "usuarios.php";
-	$us = new Usuario;
-	//verificar se clicou no botão entrar
-	if(isset($_POST['nome']))
-	{
-		$nome = addslashes($_POST['nome']);
-		$senha = addslashes($_POST['password']);
-		$nome_social = addslashes($_POST['socialname']);
-		$email = addslashes($_POST['email']);
-		$celular = addslashes($_POST['celular']);
-		$email_confirma = addslashes($_POST['checked1']);
-		$celular_confirma = addslashes($_POST['checked2']);
-		$titulacao = addslashes($_POST['titula']);
+require_once "usuarios.php";
+$us = new Usuario;
+//verificar se clicou no botão entrar
+if (isset($_POST['nome'])) {
+    $nome = addslashes($_POST['nome']);
+    $senha = addslashes($_POST['password']);
+    $nome_social = addslashes($_POST['socialname']);
+    $email = addslashes($_POST['email']);
+    $celular = addslashes($_POST['celular']);
+    $email_confirma = addslashes($_POST['checked1']);
+    $celular_confirma = addslashes($_POST['checked2']);
+    $titulacao = addslashes($_POST['titula']);
 
-		//verificar se está campos preenchido
-		if(!empty($nome) && !empty($senha) && !empty($nome_social) && !empty($email) && !empty($celular) && !empty($email_confirma) && !empty($celular_confirma) && !empty($titulacao))
-		{
-			if($us->cadastro($nome, $senha, $nome_social, $email, $celular, $email_confirma, $celular_confirma, $titulacao) == true)
-			{
-				echo "<p>usuario cadastrado com sucesso!</p>";
-				echo "<a href='index.php'>ir para a pagina de login</a>";
-			}
-			else
-			{
-				echo "<p>usuario ja cadastrado!</p>";
-				echo "<a href='index.php'>ir para a pagina de login</a>";
-			}
-		}
-		else
-		{
-			echo "<p>preencha todos os campos!</p>";
-		}
-	}		
-?>	
+    //verificar se está campos preenchido
+    if (!empty($nome) && !empty($senha) && !empty($nome_social) && !empty($email) && !empty($celular) && !empty($email_confirma) && !empty($celular_confirma) && !empty($titulacao)) {
+        if ($us->cadastro($nome, $senha, $nome_social, $email, $celular, $email_confirma, $celular_confirma, $titulacao) == true) {
+            echo "<div class='modal-success-cadastro'>
+                    <span>Usuário cadastrado com sucesso!</span>
+                </div>";
+            echo "<a href='index.php'>ir para a pagina de login</a>";
+        } else {
+            echo "<div class='modal-error-cadastro'>
+                    <span>Usuário ja cadastrado!</span>
+                </div>";
+            echo "<a href='index.php'>ir para a pagina de login</a>";
+        }
+    } else {
+        echo "<div class='modal-error-cadastro'>
+                <span>Preencha todos os campos!</span>
+            </div>";
+    }
+}
+?>
+
 </html>

@@ -15,6 +15,7 @@ body {
     z-index: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .form {
@@ -31,10 +32,10 @@ body {
 }
 
 .ajudandotitle {
-    width: 300px;
-    height: 100px;
+    width: 320px;
+    height: 135px;
     position: absolute;
-    top: 30px;
+    top: -3px;
 }
 
 .logintitle {
@@ -160,4 +161,21 @@ body {
     position: absolute !important; 
     top: 81px;
     right: 86px;
+}
+
+.modal-error {
+    display: flex;
+    border: 6px solid;
+    width: 250px;
+    position: absolute;
+    align-items: center;
+    height: 55px;
+    top: 18px;
+    border-radius: 8px;
+    border-color: #b90000;
+    background-color: #bf0202;
+    z-index: 2;
+    color: white;
+    justify-content: center;
+    transition: 1.5s;
 }
