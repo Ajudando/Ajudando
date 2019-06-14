@@ -31,10 +31,10 @@ session_start();
 		</label>
 		<nav class="nav-menu">
 			<ul>
-				<li><a href="">Atividades</a></li>
-				<li><a href="">Video-Aulas</a></li>
-				<li><a href="">Planos</a></li>
-				<li><a href="">Configurações</a></li>
+				<li><a href="atividade.php">Atividades</a></li>
+				<li><a href="aula.php">Video-Aulas</a></li>
+				<li><a href="plano.php">Planos</a></li>
+				<li><a href="configurar.php">Configurações</a></li>
 			</ul>
 		</nav>
 		<div class="images">
