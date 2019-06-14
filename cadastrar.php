@@ -87,7 +87,6 @@
                     echo "<div class='modal-error-cadastro'>
                     <span>Usuário ja cadastrado!</span>
                 </div>";
-                    echo "<a href='index.php'>ir para a pagina de login</a>";
                 }
             } else {
                 echo "<div class='modal-error-cadastro'>
