@@ -89,6 +89,7 @@ ul {
     position: absolute;
     z-index: 2;
     left: 0px;
+    transition: all 0.5s;
 }
 
 .search-image {
@@ -178,5 +179,5 @@ input[type="checkbox"]:checked ~ .nav-menu {
 
 input[type="checkbox"]:checked ~ .menu {
     left: 150px;
-    transition: all 0.5s;
+    transition: all 0.55s;
 }
