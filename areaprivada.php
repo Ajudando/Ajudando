@@ -15,22 +15,29 @@ session_start();
 <body>
 	<div class="fundo-area">
 		<div class="nav-options">
-			<div class="perfil">
+			<input type="checkbox" id="checkuser">
+			<label class="perfil" for="checkuser">
 				<img src="images/user-image.png" alt="" class="user-image" />
-				<span>Nome Social</span>
-			</div>
+				Nome Social
+			</label>
+			<nav class="nav-user">
+				<ul class="ul-user">
+					<li><a href="atividade.php">Minha conta</a></li>
+					<li><a href="aula.php">Sair</a></li>
+				</ul>
+			</nav>
 			<div class="input-search">
 				<input type="text" placeholder="Pesquise uma imagem por termo" name="user" class="search">
 				<img src="images/search.png" alt="" class="search-image" />
 				<img src="images/filter.png" alt="" class="filter-image" />
 			</div>
 		</div>
-		<input type="checkbox" id="check">
-		<label class="menu" for="check">
+		<input type="checkbox" id="checkmenu">
+		<label class="menu" for="checkmenu">
 			<img src="images/menu.png" alt="" class="menu-image" />
 		</label>
 		<nav class="nav-menu">
-			<ul>
+			<ul class="ul-menu">
 				<li><a href="atividade.php">Atividades</a></li>
 				<li><a href="aula.php">Video-Aulas</a></li>
 				<li><a href="plano.php">Planos</a></li>
