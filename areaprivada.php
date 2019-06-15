@@ -22,8 +22,8 @@ session_start();
 			</label>
 			<nav class="nav-user">
 				<ul class="ul-user">
-					<li><a href="atividade.php">Minha conta</a></li>
-					<li><a href="aula.php">Sair</a></li>
+					<li><a href="conta.php">Minha conta</a></li>
+					<li><a href="index.php">Sair</a></li>
 				</ul>
 			</nav>
 			<div class="input-search">
