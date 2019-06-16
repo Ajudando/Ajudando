@@ -1,14 +1,23 @@
 <?php
 
 class Usuario
-{
-
-	//public $msgErro = "";
+{		
+	public function msg_notify($valor, $mostrar){
+		session_start();
+		$_SESSION['tentativa_cadastro'] = $mostrar;
+		if($valor !== false){
+			$_SESSION['mensagem'] = $valor;
+		}
+		else{
+			$_SESSION['mensagem'] = $valor;
+		}
+	}
 		
-	public function cadastro($nome, $senha, $nome_social, $email, $celular, $confirmar_email, $confirmar_celular, $titulacao)
+	public function cadastro($nome, $senha, $nome_social, $email, $celular, $contato_email, $contato_celular, $titulacao, $social)
 	{
 		//verificar se já existe cadastro
-		$connect = mysqli_connect("localhost:3307", "root", "usbw", "ajudando");
+		$connect = mysqli_connect("remotemysql.com:3306", "TBt55e2fqG", "AndFOXlW4k", "TBt55e2fqG");
+		//$connect = mysqli_connect("localhost:3307", "root", "usbw", "ajudando");
 		$comand_sql = mysqli_query($connect ,"SELECT * FROM usuarios WHERE email = '{$email}'");
 		if(mysqli_num_rows($comand_sql) == true)
 		{
@@ -18,8 +27,8 @@ class Usuario
 		{
 		    // caso nao, cadastrar
 			$senha_codificada = md5($senha);
-			$comand_sql1 = "INSERT INTO usuarios (nome, senha, nome_social, email, celular, confirmar_email, confirmar_celular, titulacao) 
-			VALUES ('$nome', '$senha_codificada', '$nome_social', '$email', '$celular', '$confirmar_email', '$confirmar_celular', '$titulacao')";
+			$comand_sql1 = "INSERT INTO usuarios (nome, senha, nome_social, email, celular, contato_email, contato_celular, titulacao, social ) 
+			VALUES ('$nome', '$senha_codificada', '$nome_social', '$email', '$celular', '$contato_email', '$contato_celular', '$titulacao', '$social')";
 			mysqli_query($connect, $comand_sql1);
 			mysqli_close($connect);
 			return true;
@@ -29,7 +38,8 @@ class Usuario
 	public function logar($email, $senha)
 	{
 		//verificar se o email e senha estao cadastrados
-		$connect = mysqli_connect("localhost:3307", "root", "usbw", "ajudando");
+		$connect = mysqli_connect("remotemysql.com:3306", "TBt55e2fqG", "AndFOXlW4k", "TBt55e2fqG");
+		//$connect = mysqli_connect("localhost:3307", "root", "usbw", "ajudando");
 		$senha_codificada = md5($senha);
 		$comand_sql = mysqli_query($connect , "SELECT * FROM usuarios");
 		while($result = mysqli_fetch_array($comand_sql))
@@ -40,6 +50,7 @@ class Usuario
 			{
 				//Entrar no sistema
 				session_start();
+				$_SESSION['login'] = true;
 				return true; //Logado com sucesso 
 				break;
 			}
@@ -48,7 +59,8 @@ class Usuario
 
 	public function esqueci($email)
 	{
-		$connect = mysqli_connect("localhost:3307", "root", "usbw", "ajudando");
+		$connect = mysqli_connect("remotemysql.com:3306", "TBt55e2fqG", "AndFOXlW4k", "TBt55e2fqG");
+		//$connect = mysqli_connect("localhost:3307", "root", "usbw", "ajudando");
 		$comand_sql = mysqli_query($connect ,"SELECT * FROM usuarios WHERE email = '{$email}'");
 
 		while($result = mysqli_fetch_array($comand_sql))
@@ -68,8 +80,8 @@ class Usuario
 				break;
 			}
 		}
-
 	}
+	
 }
 
 ?>

@@ -1,6 +1,4 @@
-CREATE DATABASE ajudando; 
-
-USE ajudando;
+USE TBt55e2fqG;
 
 CREATE TABLE usuarios(
 	
@@ -8,19 +6,21 @@ CREATE TABLE usuarios(
 	
 	nome              VARCHAR (90)          NOT NULL,
 
-	senha			  VARCHAR (90)          NOT NULL,
+	senha		  VARCHAR (90)          NOT NULL,
 
-	nome_social       VARCHAR (90)          NOT NULL,
+	nome_social       VARCHAR (90)          ,
 
 	email             VARCHAR (120)         NOT NULL,
 
-	celular           CHAR    (11)          NOT NULL,
+	celular           CHAR    (11)          ,
     
-	confirmar_email   ENUM    ('Sim','Não') NOT NULL,
-        
-	confirmar_celular ENUM    ('Sim','Não') NOT NULL,
+	contato_email     ENUM    ('sim','nao') ,
+    
+	contato_celular   ENUM    ('sim','nao') ,
 	
-	titulacao         VARCHAR (20)          NOT NULL,
+	titulacao         VARCHAR (20)          ,
+	
+	social            ENUM    ('google','facebook'),
 
 	PRIMARY KEY (id_usuario)
     

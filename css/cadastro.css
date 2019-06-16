@@ -101,6 +101,7 @@
     position: absolute;
     align-items: center;
     height: 55px;
+    top: 18px;
     border-radius: 8px;
     border-color: #b90000;
     background-color: #bf0202;
@@ -108,7 +109,7 @@
     color: white;
     justify-content: center;
     transition: 1.5s;
-    top: 70px;
+    align-self: center;
 }
 
 .modal-success-cadastro {
@@ -118,6 +119,7 @@
     position: absolute;
     align-items: center;
     height: 55px;
+    top: 18px;
     border-radius: 8px;
     border-color: #02ac10;
     background-color: #02ac10;
@@ -125,5 +127,4 @@
     color: white;
     justify-content: center;
     transition: 1.5s;
-    top: 70px;
 }

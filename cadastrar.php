@@ -62,6 +62,7 @@
                 <input type="submit" class="btn-cadastro" name="signup" value="Cadastrar">
             </form>
         </div>
+
         <?php
         require_once "usuarios.php";
         $us = new Usuario;
@@ -76,17 +77,15 @@
             $celular_confirma = addslashes($_POST['checked2']);
             $titulacao = addslashes($_POST['titula']);
 
+            $msg_not = false;
             //verificar se está campos preenchido
             if (!empty($nome) && !empty($senha) && !empty($nome_social) && !empty($email) && !empty($celular) && !empty($email_confirma) && !empty($celular_confirma) && !empty($titulacao)) {
-                if ($us->cadastro($nome, $senha, $nome_social, $email, $celular, $email_confirma, $celular_confirma, $titulacao) == true) {
-                    echo "<div class='modal-success-cadastro'>
-                    <span>Usuário cadastrado com sucesso!</span>
-                </div>";
-                    echo "<a href='index.php'>ir para a pagina de login</a>";
+                if ($us->cadastro($nome, $senha, $nome_social, $email, $celular, $email_confirma, $celular_confirma, $titulacao, "ajudando") == true) {
+                    $msg_not = $us->msg_notify(true, true);
+                    header("location: index.php");
                 } else {
-                    echo "<div class='modal-error-cadastro'>
-                    <span>Usuário ja cadastrado!</span>
-                </div>";
+                    $msg_not = $us->msg_notify(false, true);
+                    header("location: index.php");
                 }
             } else {
                 echo "<div class='modal-error-cadastro'>
@@ -96,6 +95,7 @@
         }
         ?>
     </div>
+
 </body>
 
 </html>
