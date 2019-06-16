@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-//if(isset($_SESSION['login'])){
-//    echo "<script> console.log('ok'); </script>";
-//}
-//else{
-//    header("location: index.php");
-//S}
+if(isset($_SESSION['login'])) {
+    echo " ";
+}
+else {
+    header("location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
