@@ -63,11 +63,16 @@ body {
     transition: 0.5s;
     outline: none;
     background-color: white;
-    background-image: url(../images/passwordlogin.png);
-    background-position: 5px 7px;
-    background-repeat: no-repeat;
     padding-left: 40px;
     background-size: 30px;
+}
+
+.image-password {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 330px;
+    left: 46px;
 }
 
 .inputlogin-user {
@@ -79,14 +84,17 @@ body {
     height: 25px;
     transition: 0.5s;
     outline: none;
-    background-color: white;
-    background-image: url(../images/userlogin.png);
-    background-position: 5px 7px;
-    background-repeat: no-repeat;
     padding-left: 40px;
     background-size: 30px;
 }
 
+.image-user {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 231px;
+    left: 47px;
+}
 .inputlogin:focus {
     border: 3px solid rgb(0, 0, 0);
 }

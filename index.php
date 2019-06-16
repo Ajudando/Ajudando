@@ -85,12 +85,8 @@ if (!isset($accessToken)) {
 	<title>Ajudando - Login</title>
 	<link rel="icon" href="images/ajudinhaicone.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="css/login.css">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script type="text/javascript" src="facebook.js"></script>
-	<script type="text/javascript" src="google.js"></script>
 	<meta name="google-signin-scope" content="profile email">
 	<meta name="google-signin-client_id" content="285501556211-ft2mm3rp6ch3epaqcpo75dbpqb1nht8s.apps.googleusercontent.com">
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body>
@@ -102,11 +98,13 @@ if (!isset($accessToken)) {
 				<div>
 					<label for="user">E-mail:</label><br>
 					<input type="email" placeholder="Digite seu e-mail" name="user" class="inputlogin-user">
+					<img src="images/userlogin.png" alt="" class="image-user">
 				</div>
 				<br>
 				<div>
 					<label for="password">Senha:</label><br>
 					<input type="password" placeholder="Digite sua senha" name="password" class="inputlogin-password">
+					<img src="images/passwordlogin.png" alt="" class="image-password">
 				</div>
 				<div class="position-login">
 					<input type="submit" class="btn-login" name="login" value="Entrar">
@@ -114,7 +112,7 @@ if (!isset($accessToken)) {
 				<div class="display-or">
 					<span>OU</span>
 					<div id="my-signin2" class="g-signin2" data-onsuccess="GonSignIn"></div>
-					<a href="<?php echo $loginUrl?>"><img src="images/login-fb.png" class="fb-login-button"></a>
+					<a href="<?php echo $loginUrl ?>"><img src="images/login-fb.png" class="fb-login-button"></a>
 				</div>
 				<div class="cadastrar">
 					<a href="cadastrar.php" class="nolink">Não tem uma conta? Cadastre-se!</a>
@@ -161,6 +159,10 @@ if (!isset($accessToken)) {
 		}
 		?>
 	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="facebook.js"></script>
+	<script type="text/javascript" src="google.js"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 
 </html>

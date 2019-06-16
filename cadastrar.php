@@ -17,33 +17,33 @@
             <form role="form" class="corpo-form" method="post">
                 <div class="form-itens">
                     <label class="label-cadastro">Nome:</label>
-                    <input name="nome" type="text" placeholder="Digite seu nome completo" class="inputname">
+                    <input name="nome" type="text" placeholder="Digite seu nome completo" class="inputname" maxlength="90">
                 </div>
                 <div class="form-itens">
                     <label class="label-cadastro">Senha:</label>
-                    <input name="password" type="password" placeholder="Digite sua senha" class="inputname">
+                    <input name="password" type="password" placeholder="Digite sua senha" class="inputname" maxlength="90">
                 </div>
                 <div class="form-itens">
                     <label class="label-cadastro">Como devemos te chamar?:</label>
-                    <input name="socialname" type="text" placeholder="Digite seu nome social" class="inputname">
+                    <input name="socialname" type="text" placeholder="Digite seu nome social" class="inputname" maxlength="90">
                 </div>
                 <div class="form-itens">
                     <label class="label-cadastro">E-mail:</label>
-                    <input name="email" type="email" placeholder="Digite seu email" class="inputname">
+                    <input name="email" type="email" placeholder="Digite seu email" class="inputname" maxlength="120">
                 </div>
                 <div class="form-itens">
                     <label class="label-cadastro">Celular:</label>
-                    <input name="celular" type="number" maxlength="11" placeholder="Digite seu numero de celular (COM DDD)" class="inputname">
+                    <input name="celular" id="celular" type="text" placeholder="Digite seu numero de celular (COM DDD)" class="inputname">
                 </div>
                 <div class="form-itens">
                     <label class="checkbox-cadastro">Podemos te contatar por e-mail?
-                        <span class="yes-or-no"><input type="radio" value="sim" name="checked1"> Sim OU
+                        <span class="yes-or-no"><input type="radio" value="sim" name="checked1"> Sim ou
                             <input type="radio" value="nao" name="checked1"> Não</span>
                     </label>
                 </div>
                 <div class="form-itens">
                     <label class="checkbox-cadastro">Podemos te contatar por celular?
-                        <span><input type="radio" value="sim" name="checked2"> Sim OU
+                        <span><input type="radio" value="sim" name="checked2"> Sim ou
                             <input type="radio" value="nao" name="checked2"> Não</span>
                     </label>
                 </div>
@@ -95,7 +95,11 @@
         }
         ?>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    <script type="text/javascript">
+        $("#celular").mask("(00) 0000-0000");
+    </script>
 </body>
 
 </html>

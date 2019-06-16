@@ -14,10 +14,6 @@ function GonSignIn(googleUser) {
 	var userfistname = profile.getGivenName();
     var id_token = googleUser.getAuthResponse().id_token;
 
-	console.log(userName);
-	console.log(userEmail);
-	console.log(userfistname);
-
 	if(userName !== ''){
 	//passando as informações
 		var dados_google = {
@@ -25,7 +21,6 @@ function GonSignIn(googleUser) {
 			userfistname:userfistname,
 			userEmail:userEmail
 		};
-		console.log('teste');
 		$.post('g_salvar.php', dados_google, function(retorna){
 			//document.getElementById('comando').innerHTML = retorna;
 		});
