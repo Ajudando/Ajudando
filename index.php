@@ -10,12 +10,12 @@ $fb = new \Facebook\Facebook([
 	'app_id' => '417007985810675',
 	'app_secret' => 'e2b27d93257ad54b147d06e2bf0182cb',
 	'default_graph_version' => 'v2.10',
-	//'default_access_token' => '{access-token}', // optional
+	'default_access_token' => 'EAAF7RDzc3PMBAAoOIDjCooJDrL9FHhZCZAJltY0ZCnBxpgzbsZA7vDZCA387Bwj7zof050JwyFqBn9vGuHQKI7okzDfTZANbrZBJVRWVUKYL8fUeGZBT5A0Gz6e17UW8eSW5KQ9UnuimEPapHWuY6JhAk1SqsIMV1pslDW4hw2cXuwZDZD', // optional
 ]);
 
 $helper = $fb->getRedirectLoginHelper();
 //var_dump($helper);
-$permissions = ['email']; // Optional permissions
+$permissions = ['email']; // Optional permissions 
 
 try {
 	if (isset($_SESSION['face_access_token'])) {
@@ -58,6 +58,9 @@ if (!isset($accessToken)) {
 		$face_email = $user->getEmail();
 		$face_name = $user->getName();
 		$face_first_name = $user->getFirstName();
+		if($face_first_name == ''){
+			$face_first_name = $user->getName();
+		}
 		$face_senha = '0000';
 		$face_ver = $us->cadastro($face_name, $face_senha, $face_first_name, $face_email, "99999999999", "nao", "nao", "nao informado", "facebook");
 		if ($face_ver == true) {
@@ -79,7 +82,6 @@ if (!isset($accessToken)) {
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<title>Ajudando - Login</title>
@@ -90,6 +92,30 @@ if (!isset($accessToken)) {
 </head>
 
 <body>
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 	<div class="background">
 		<div class="form">
 			<img src="images/ajudandotitle.png" class="ajudandotitle" />
@@ -149,14 +175,7 @@ if (!isset($accessToken)) {
 			}
 		}
 		//fazendo login pelo google
-		if (isset($_SESSION['carregar'])) {
-			$user_google = $_SESSION['Guser'];
-			$senha_google = $_SESSION['Gsenha'];
-			$verificador = $us->logar($user_google, $senha_google);
-			if ($verificador == true) {
-				header("location: areaprivada.php");
-			}
-		}
+		
 		?>
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

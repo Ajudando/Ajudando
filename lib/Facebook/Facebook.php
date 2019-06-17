@@ -260,7 +260,7 @@ class Facebook
             return;
         }
 
-        throw new \InvalidArgumentException('The default access token must be of type "string" or Facebook\AccessToken');
+        //throw new \InvalidArgumentException('The default access token must be of type "string" or Facebook\AccessToken');
     }
 
     /**

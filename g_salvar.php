@@ -14,13 +14,17 @@ if($verificador !== false){
 	$_SESSION['carregar'] = true;
 	$_SESSION['Guser'] = $email;
 	$_SESSION['Gsenha']= $senha;
+	echo "areaprivada.php";
 }
 else{
-	$verificador = $us->logar($email, $senha);
-	if($verificador !== false){
-		$_SESSION['carregar'] = true;
-		$_SESSION['Guser'] = $email;
-		$_SESSION['Gsenha']= $senha;
+	$_SESSION['carregar'] = true;
+	$_SESSION['Guser'] = $email;
+	$_SESSION['Gsenha']= $senha;
+	$_SESSION['logando'] = true;
+	$_SESSION['login'] = true;
+	$verificado = $us->logarGoogle($email, $senha);
+	if($verificado == true){
+		echo "areaprivada.php";
 	}
 }
 ?>

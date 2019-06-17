@@ -1,13 +1,3 @@
-<?php
-session_start();
-
-if(isset($_SESSION['login'])) {
-    echo " ";
-}
-else {
-    header("location: index.php");
-}
-?>
 <!DOCTYPE html>
 <html>
 
@@ -17,20 +7,22 @@ else {
 	<link rel="stylesheet" href="css/areaprivada.css">
 	<link rel="stylesheet" href="css/login.css">
 	<link rel="icon" href="images/ajudandoicone.ico" type="image/x-icon" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="perfil.js"></script>
 </head>
 
 <body>
 	<div class="fundo-area">
 		<div class="nav-options">
 			<input type="checkbox" id="checkuser">
-			<label class="perfil" for="checkuser">
+			<label class="perfil" for="checkuser" id="nome_social_usuario">
 				<img src="images/user-image.png" alt="" class="user-image" />
-				Nome Social
+				<p id="nome_social_usuario"></p>
 			</label>
 			<nav class="nav-user">
 				<ul class="ul-user">
 					<li><a href="conta.php">Minha conta</a></li>
-					<li><a href="index.php">Sair</a></li>
+					<li><a href="perfil_sair.php" >Sair</a></li>
 				</ul>
 			</nav>
 			<div class="input-search">
@@ -55,10 +47,20 @@ else {
 			<div class="modal-images">
 				<span>Não há imagens para a visualização.</span>
 				<img src="images/sad.png" alt="" class="no-images" />
+<?php
+session_start();
+if(isset($_SESSION['login'])) {
+	
+}
+else {
+    header("location: index.php");
+}
+?>
 			</div>
 
 		</div>
 	</div>
+
 </body>
 
 </html>

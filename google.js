@@ -22,7 +22,13 @@ function GonSignIn(googleUser) {
 			userEmail:userEmail
 		};
 		$.post('g_salvar.php', dados_google, function(retorna){
-			//document.getElementById('comando').innerHTML = retorna;
+			console.log(retorna);
+			if(retorna === '"erro"'){
+				
+			}
+			else{
+				window.location.href = retorna;
+			}
 		});
 	}
 	else {

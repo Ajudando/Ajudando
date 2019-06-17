@@ -46,10 +46,40 @@ class Usuario
 		{
 			$usu = $result["email"];
 			$sen = $result["senha"];
+			$name = $result["nome_social"];
+			$social = $result["social"];
 			if($email == $usu and $sen == $senha_codificada)
 			{
 				//Entrar no sistema
 				session_start();
+				$_SESSION['nome'] = $name;
+				$_SESSION['social'] = $social;
+				$_SESSION['login'] = true;
+				return true; //Logado com sucesso 
+				break;
+			}
+		}
+	}
+	
+	public function logarGoogle($email, $senha)
+	{
+		//verificar se o email e senha estao cadastrados
+		$connect = mysqli_connect("remotemysql.com:3306", "TBt55e2fqG", "AndFOXlW4k", "TBt55e2fqG");
+		//$connect = mysqli_connect("localhost:3307", "root", "usbw", "ajudando");
+		$senha_codificada = md5($senha);
+		$comand_sql = mysqli_query($connect , "SELECT * FROM usuarios");
+		while($result = mysqli_fetch_array($comand_sql))
+		{
+			$usu = $result["email"];
+			$sen = $result["senha"];
+			$name = $result["nome_social"];
+			$social = $result["social"];
+			if($email == $usu and $sen == $senha_codificada)
+			{
+				//Entrar no sistema
+				//session_start();
+				$_SESSION['nome'] = $name;
+				$_SESSION['social'] = $social;
 				$_SESSION['login'] = true;
 				return true; //Logado com sucesso 
 				break;
