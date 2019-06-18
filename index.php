@@ -126,8 +126,7 @@ if (!isset($accessToken)) {
 					<input type="email" placeholder="Digite seu e-mail" name="user" class="inputlogin-user">
 					<img src="images/userlogin.png" alt="" class="image-user">
 				</div>
-				<br>
-				<div>
+				<div class="space-div">
 					<label for="password">Senha:</label><br>
 					<input type="password" placeholder="Digite sua senha" name="password" class="inputlogin-password">
 					<img src="images/passwordlogin.png" alt="" class="image-password">
