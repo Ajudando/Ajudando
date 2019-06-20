@@ -13,6 +13,13 @@
 
 <body>
 	<div class="fundo-area">
+		<div class="completar-cadastro">
+			<div class="modal-cadastro">
+				<div>
+					<span>Responda algumas perguntas para terminar o cadastro</span>
+				</div>
+			</div>
+		</div>
 		<div class="nav-options">
 			<input type="checkbox" id="checkuser">
 			<label class="perfil" for="checkuser" id="nome_social_usuario">
@@ -22,7 +29,7 @@
 			<nav class="nav-user">
 				<ul class="ul-user">
 					<li><a href="conta.php">Minha conta</a></li>
-					<li><a href="perfil_sair.php" >Sair</a></li>
+					<li><a href="perfil_sair.php">Sair</a></li>
 				</ul>
 			</nav>
 			<div class="input-search">
@@ -47,15 +54,13 @@
 			<div class="modal-images">
 				<span>Não há imagens para a visualização.</span>
 				<img src="images/sad.png" alt="" class="no-images" />
-<?php
-session_start();
-if(isset($_SESSION['login'])) {
-	
-}
-else {
-    header("location: index.php");
-}
-?>
+				<?php
+				session_start();
+				if (isset($_SESSION['login'])) { }
+				//else {
+				//    header("location: index.php");
+				//}
+				?>
 			</div>
 
 		</div>

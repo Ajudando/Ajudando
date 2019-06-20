@@ -58,7 +58,7 @@ if (!isset($accessToken)) {
 		$face_email = $user->getEmail();
 		$face_name = $user->getName();
 		$face_first_name = $user->getFirstName();
-		if($face_first_name == ''){
+		if ($face_first_name == '') {
 			$face_first_name = $user->getName();
 		}
 		$face_senha = '0000';
@@ -82,6 +82,7 @@ if (!isset($accessToken)) {
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>Ajudando - Login</title>
@@ -94,27 +95,30 @@ if (!isset($accessToken)) {
 <body>
 
 
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '{your-app-id}',
-      cookie     : true,
-      xfbml      : true,
-      version    : '{api-version}'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId: '{your-app-id}',
+				cookie: true,
+				xfbml: true,
+				version: '{api-version}'
+			});
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+			FB.AppEvents.logPageView();
+
+		};
+
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 
 	<div class="background">
 		<div class="form">
@@ -174,7 +178,6 @@ if (!isset($accessToken)) {
 			}
 		}
 		//fazendo login pelo google
-		
 		?>
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

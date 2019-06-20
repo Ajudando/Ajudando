@@ -222,3 +222,25 @@ input[type="checkbox"]:checked ~ .perfil {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
+
+.completar-cadastro {
+    z-index: 3;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-cadastro {
+    width: 1000px;
+    height: 600px;
+    background: white;
+    border: 6px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
