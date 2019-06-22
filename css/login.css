@@ -3,6 +3,7 @@ body {
     padding: 0; 
     overflow-x: hidden;
     overflow-y: hidden;
+    font-family: "Courier New", Courier, monospace;
 }
 
 .background {
