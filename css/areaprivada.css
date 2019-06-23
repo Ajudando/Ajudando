@@ -320,7 +320,3 @@ input[type="checkbox"]:checked ~ .perfil {
     height: 80px;
     align-self: center;
 }
-
-input.next[type="checkbox"]:checked ~ .questions-2 {
-    visibility: visible;
-}
